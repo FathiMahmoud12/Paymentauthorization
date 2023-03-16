@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Paymentauthorization.Models.Province>
+
+@using (Html.BeginForm("Index", "provinces", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="card">
+        <div class="card-header">
+            <div class="row justify-content-between">
+                <h4 class="col-auto">@ViewBag.Title</h4>
+            </div>
+        </div>
+    </div>
+          
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                الاسم
+            </th>
+            <th>
+                عمليات
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProvincesNAme)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
