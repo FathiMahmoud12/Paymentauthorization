@@ -12,9 +12,12 @@ namespace Paymentauthorization.Controllers
         Admin_DBEntities db = new Admin_DBEntities();
         // GET: Login
         public ActionResult Index()
+
+
         {
+            ViewBag.MASSAGE = "مساء الخير ";
             return View();
-        }
+        }  
       
         [HttpPost]
         public ActionResult Index(User u)
