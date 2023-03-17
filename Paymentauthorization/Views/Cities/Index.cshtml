@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Paymentauthorization.Models.City>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("Index", "Cities", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="card">
+        <div class="card-header">
+            <div class="row justify-content-between">
+                <h4 class="col-auto">المدن </h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+            <div class="Row">
+                <div class="form-group mb-3 col-sm-12">
+                    @Html.Label("المحافظة", htmlAttributes: new { @class = "control-label" })
+                    <div class="col-12">
+                        @Html.DropDownList("id", new SelectList(ViewBag.data, "id", "ProvincesNAme"), "--اختر--", new { @class = "form-control text-center", required = "required" })
+                        @Html.ValidationMessage("id", "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    <br>
+    <div class="mb-3">
+        <label for="username" class="form-label"> إسم المدينة  : </label>
+        <input type="text" class="form-control" id="CityName" name="CityName" placeholder="المدينة" required>
+        <div class="invalid-feedback">
+            أدخل اسم المدينة
+        </div>
+    </div>
+
+
+
+    <div class="mb-3" style="direction:ltr" >
+        <button class="btn btn-primary w-35 waves-effect waves-light" type="submit" >تسجيل </button>
+    </div>
+}
+<table class="table table-hover">
+    <thead class="thead-dark ">
+        <tr>
+            <th>
+                المحافظة
+            </th>   
+            <th>
+                المدينة
+            </th>
+            <th style="margin-left:100px">
+                عمليات
+            </th>
+        </tr>
+    </thead>
+    <br>
+  
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.provinceid)
+            </td> 
+            <td>
+                @Html.DisplayFor(modelItem => item.CityName)
+            </td>
+            <td>
+                @Html.ActionLink("تعديل", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("عرض البيانات  ", "Details", new { id = item.ID }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

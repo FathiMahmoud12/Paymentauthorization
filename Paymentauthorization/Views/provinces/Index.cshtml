@@ -6,23 +6,38 @@
     <div class="card">
         <div class="card-header">
             <div class="row justify-content-between">
-                <h4 class="col-auto">@ViewBag.Title</h4>
+                <h4 class="col-auto">المحافظات </h4>
             </div>
         </div>
     </div>
-          
+    <div class="mb-3">
+        <label for="username" class="form-label"> إسم المحافظة : </label>
+        <input type="text" class="form-control" id="ProvincesNAme" name="ProvincesNAme" placeholder="المحافظة" required>
+        <div class="invalid-feedback">
+            أدخل اسم المحافظة
+        </div>
+    </div>
+
+
+
+    <div class="mb-3" style="direction:ltr">
+        <button class="btn btn-primary w-34 waves-effect waves-light" type="submit">تسجيل </button>
+    </div>
 }
-<table class="table">
-    <thead>
+<table class="table table-hover">
+    <thead class="thead-dark ">
         <tr>
             <th>
                 الاسم
             </th>
-            <th>
+            <th style="margin-left:100px">
                 عمليات
             </th>
         </tr>
     </thead>
+    <br>
+    <br>
+    <hr>
     @foreach (var item in Model)
     {
 
@@ -31,9 +46,9 @@
                 @Html.DisplayFor(modelItem => item.ProvincesNAme)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                @Html.ActionLink("تعديل", "Edit", new { id = item.id }) |
+                @Html.ActionLink("عرض البيانات  ", "Details", new { id = item.id }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.id })
             </td>
         </tr>
     }

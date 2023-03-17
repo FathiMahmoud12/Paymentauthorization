@@ -27,5 +27,6 @@ namespace Paymentauthorization.Models
     
         public virtual DbSet<Province> Provinces { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<City> Cities { get; set; }
     }
 }

@@ -78,7 +78,7 @@
                                 <img src="@TempData["SettingLogo"]" alt="" height="24" />
                             </span>
                             <span class="logo-lg">
-                                <img src="@TempData["SettingLogo"]" alt="" height="24" /> <span class="logo-txt">مزاولة المهنة</span>
+                                <img src="@TempData["SettingLogo"]" alt="" height="24" /> <span class="logo-txt"> إسم الجمعية </span>
                             </span>
                         </a>
 
@@ -87,7 +87,7 @@
                                 <img src="@TempData["SettingLogo"]" alt="" height="24" />
                             </span>
                             <span class="logo-lg">
-                                <img src="@TempData["SettingLogo"]" alt="" height="24" /> <span class="logo-txt">مزاولة المهنة</span>
+                                <img src="@TempData["SettingLogo"]" alt="" height="24" /> <span class="logo-txt">إسم الجمعية</span>
                             </span>
                         </a>
                     </div>
@@ -161,7 +161,7 @@
                     <ul class="metismenu list-unstyled" id="side-menu">
 
                         <li>
-                            <a href="/Admin/Index">
+                            <a href="/Home/Index">
                                 <i class="bx bxs-dashboard"></i>
                                 <span data-key="t-dashboard">Admin Dashboard</span>
                             </a>
@@ -169,77 +169,74 @@
                         <li>
                             <i class="bi bi-envelope-paper-fill"></i>
                             <a href="javascript: void(0);" class="has-arrow">
-                                <i class="bx bxs-dashboard"></i>
+                                <i class="bx bxs-spreadsheet"></i>
                                 <span data-key="t-apps">التعريفات   </span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
                                 <li><a href="@Url.Action("Index","provinces")"><i class="fa fa-city p-1"></i> المحافظات  </a></li>
-                                <li><a href="@Url.Action("Index","Areas")"><i class="fa fa-chart-area p-1"></i>المدن </a></li>
-                                <li><a href="@Url.Action("Index","Branches")"><i class="fa fa-building p-1"></i>المناطق  </a></li>
+                                <li><a href="@Url.Action("Index","Cities")"><i class="fa fa-building p-1"></i>المدن </a></li>
+                                <!--<li>-->@*<a href="@Url.Action("Index","Branches")"><i class="fa fa-building p-1"></i>المناطق  </a>*@<!--</li>-->
 
                             </ul>
                         </li>
                         <li>
+                            <i class="bi bi-envelope-paper-fill"></i>
                             <a href="javascript: void(0);" class="has-arrow">
-                                <i data-feather="grid"></i>
+                                <i class="bx bxs-accessibility"></i>
                                 <span data-key="t-apps">الحالات </span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
                                 <li><a href="@Url.Action("Index","AdminCategories")"><i class="fas fa-list-alt p-1"></i> ادارة الحالات </a></li>
                                 <li><a href="@Url.Action("Index","AdminProducts")"><i class="fas fa-list p-1"></i>اضافة حاله  </a></li>
                                 @*<li><a href="@Url.Action("ProductImages","AdminProducts")"><i class="fas fa-image p-1"></i> ادارة صور منتج</a></li>
-                                <li><a href="@Url.Action("ProductReviews","AdminProducts")"><i class="fas fa-users p-1"></i> ادارة اراء العملاء</a></li>*@
+            <li><a href="@Url.Action("ProductReviews","AdminProducts")"><i class="fas fa-users p-1"></i> ادارة اراء العملاء</a></li>*@
 
                             </ul>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">
                                 <i data-feather="grid"></i>
-                                <span data-key="t-apps"> معرض الصور </span>
+                                <span data-key="t-apps">التبرعات  </span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="@Url.Action("Index","Gallery")"><i class="fa fa-folder-open p-1"></i> ادارة معرض الصور</a></li>
+                                <li><a href="@Url.Action("Index","Gallery")"><i class="fa fa-folder-open p-1"></i> تعريف التبرعات </a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">
                                 <i data-feather="grid"></i>
-                                <span data-key="t-apps">شركاء النجاح </span>
+                                <span data-key="t-apps">الخدمات </span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="@Url.Action("Index","SuccessPartiners")"><i class="fa fa-users p-1"></i> ادارة شركاء النجاح</a></li>
+                                <li><a href="@Url.Action("Index","SuccessPartiners")"><i class="fa fa-users p-1"></i> تعريف خدمة </a></li>
+                                <li><a href="@Url.Action("Index","SuccessPartiners")"><i class="fa fa-users p-1"></i> إضافة خدمة  </a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">
                                 <i data-feather="grid"></i>
-                                <span data-key="t-apps">ابرز العملاء </span>
+                                <span data-key="t-apps">المستخدمين  </span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="@Url.Action("Index","ImportantCustomers")"><i class="fa fa-user-alt p-1"></i>ادارة ابرز العملاء</a></li>
+                                <li><a href="@Url.Action("Index","ImportantCustomers")"><i class="fa fa-user-alt p-1"></i>تعريف صلاحية </a></li>
+                                <li><a href="@Url.Action("Index","ImportantCustomers")"><i class="fa fa-user-alt p-1"></i> إضافة متطوعين </a></li>
+                                <li><a href="@Url.Action("Index","ImportantCustomers")"><i class="fa fa-user-alt p-1"></i> مراجعة طلبات المتطوعين  </a></li>
+                            </ul>
+                        </li>
+                     
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <i data-feather="grid"></i>
+                                <span data-key="t-apps">الزيارات </span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="@Url.Action("Orders","Admin")"><i class="fa fa-folder-open p-1"></i> تخصيص موعد  </a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">
                                 <i data-feather="grid"></i>
-                                <span data-key="t-apps"> الاخبار </span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="@Url.Action("Index","AdminNews")"><i class="fa fa-folder-open p-1"></i> ادارة الاخبار</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow">
-                                <i data-feather="grid"></i>
-                                <span data-key="t-apps"> طلبات عرض السعر </span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="@Url.Action("Orders","Admin")"><i class="fa fa-folder-open p-1"></i> ادارة طلبات عرض السعر</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow">
-                                <i data-feather="grid"></i>
+
                                 <span data-key="t-apps">الاعدادات   </span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
